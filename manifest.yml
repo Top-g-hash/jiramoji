@@ -1,0 +1,23 @@
+modules:
+  jira:issuePanel:
+    - key: jiramoji
+      resource: main
+      resolver:
+        function: resolver
+      viewportSize: medium
+      title: jiramoji
+      icon: https://developer.atlassian.com/platform/forge/images/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.resolver
+resources:
+  - key: main
+    path: static/jiramoji/build
+permissions:
+  scopes:
+    - read:jira-work
+    - read:jira-user
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/37fb1ecd-4c3f-4be1-bca8-2ad0e7394487
